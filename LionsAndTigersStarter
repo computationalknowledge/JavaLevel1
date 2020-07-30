@@ -1,0 +1,42 @@
+public class LionsAndTigers {
+    
+    public static void main(String[] args) {
+       Manager m = new Manager();
+       m.Run();
+    }
+
+}
+
+class Manager{
+    public void Run(){
+        Lion L = new Lion("LEO");
+        Tiger T = new Tiger("TIGGY");
+    }
+}
+
+class Feline{
+    public Feline(String theName){
+        this.FelineName = theName;
+    }
+    private String FelineName;
+    
+    public void SetName(String aName){this.FelineName = aName;}
+    public String GetName(){return this.FelineName;}
+    public int AttackStrength(){
+        return 0;
+    }
+}
+
+class Lion extends Feline{
+    private String FelineName;
+    public Lion(String theName){
+        this.FelineName = theName;
+    }
+}
+
+class Tiger extends Feline{
+    private String FelineName;
+    public Tiger(String theName){
+        this.FelineName = theName;
+    }
+}
