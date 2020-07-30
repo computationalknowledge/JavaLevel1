@@ -1,0 +1,21 @@
+public class Program2 {
+    public static void main(String args[]) {
+        
+        Calculator c = new Calculator();
+        System.out.println(c.AddNumbers());
+    }
+}
+
+class Calculator{
+    int counter = 0;
+    int sum = 0;
+
+    public int AddNumbers(){
+        for( ; counter<=10 ; ){
+            sum += counter;
+            System.out.println(sum);
+            counter = counter+1;
+        }
+        return sum;
+    }
+}
