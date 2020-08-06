@@ -3,11 +3,12 @@ import java.util.Random;
 public class First{
 
     public static void main(String []args){
+        for (int i = 1; i<11 ; i++){
         Jungle.RunGame();
-       
         Jungle.DoCompetition();
         Jungle.ReportOnWinner();
     }
+}
 }
 
 class Jungle{
@@ -29,6 +30,8 @@ class Jungle{
     }
 
     public static void DoCompetition(){
+        NumberOfLIONWinners = 0;
+        NumberOfTigerWinners = 0;
         for (int i=0; i<10; i++){
             // let's compare the strength of each set of Felines stored in our Arrays!
             if ( (lions[i]).getStrength()  >   (tigers[i]).getStrength() ){
@@ -38,6 +41,18 @@ class Jungle{
                 Jungle.NumberOfTigerWinners++;
             }
         }
+        if (NumberOfLIONWinners > NumberOfTigerWinners){
+            int a = NumberOfLIONWinners;
+            int b = NumberOfTigerWinners;
+            NumberOfLIONWinners = b;
+            NumberOfTigerWinners = a; 
+        }
+        if (NumberOfLIONWinners == NumberOfTigerWinners){
+            
+            NumberOfLIONWinners -= 2;
+            NumberOfTigerWinners += 2; 
+        }
+
     }
 
     public static void ReportOnWinner(){
