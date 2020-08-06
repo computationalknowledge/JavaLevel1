@@ -4,6 +4,8 @@ public class First{
 
     public static void main(String []args){
         Jungle.RunGame();
+       
+        Jungle.DoCompetition();
         Jungle.ReportOnWinner();
     }
 }
@@ -26,21 +28,21 @@ class Jungle{
         }
     }
 
-    public void DoCompetition(){
+    public static void DoCompetition(){
         for (int i=0; i<10; i++){
             // let's compare the strength of each set of Felines stored in our Arrays!
             if ( (lions[i]).getStrength()  >   (tigers[i]).getStrength() ){
-                NumberOfLIONWinners++;
+                Jungle.NumberOfLIONWinners++;
             }
             else {
-                NumberOfTigerWinners++;
+                Jungle.NumberOfTigerWinners++;
             }
         }
     }
 
     public static void ReportOnWinner(){
-        System.out.println("LIONS: " + NumberOfLIONWinners);
-        System.out.println("Tigers: " + NumberOfTigerWinners);
+        System.out.println("LIONS: " + Jungle.NumberOfLIONWinners);
+        System.out.println("Tigers: " + Jungle.NumberOfTigerWinners);
     }
 }
 
@@ -63,7 +65,6 @@ class Lion extends Feline{
         }
         public void setStrength(){
             Random rand = new Random(); 
-            System.out.println("in the set strength method!");
             this.Strength = rand.nextInt(100); 
         }
 }
@@ -74,7 +75,6 @@ class Tiger extends Feline{
     }
     public void setStrength(){
         Random rand = new Random(); 
-        System.out.println("in the set strength method!");
         this.Strength = rand.nextInt(100); 
     }
 }
