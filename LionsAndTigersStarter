@@ -1,42 +1,37 @@
-public class LionsAndTigers {
-    
-    public static void main(String[] args) {
-       Manager m = new Manager();
-       m.Run();
-    }
+import java.util.Random; 
 
-}
+public class First{
 
-class Manager{
-    public void Run(){
-        Lion L = new Lion("LEO");
-        Tiger T = new Tiger("TIGGY");
+    public static void main(String []args){
+        Lion lion = new Lion("Leo");
+        Tiger tiggy = new Tiger("Tanya");
     }
 }
 
 class Feline{
-    public Feline(String theName){
-        this.FelineName = theName;
-    }
-    private String FelineName;
-    
-    public void SetName(String aName){this.FelineName = aName;}
-    public String GetName(){return this.FelineName;}
-    public int AttackStrength(){
-        return 0;
+        public String Name;
+        public float Strength;
+
+        public void setStrength(){
+            Random rand = new Random(); 
+            this.Strength = rand.nextInt(100); 
+        }
+         
+        public float getStrength(){
+        return this.Strength;
     }
 }
 
 class Lion extends Feline{
-    private String FelineName;
-    public Lion(String theName){
-        this.FelineName = theName;
-    }
+        public Lion(String CatName){
+            this.Name = CatName;
+            setStrength();
+        }
 }
 
 class Tiger extends Feline{
-    private String FelineName;
-    public Tiger(String theName){
-        this.FelineName = theName;
+    public Tiger(String CatName){
+        this.Name = CatName;
+        setStrength();
     }
 }
